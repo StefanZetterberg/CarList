@@ -31,7 +31,8 @@ export default class App extends React.Component {
       carList: state.carList.sort((c1, c2) => {
         return c1.model > c2.model ? 1 : -1;
       }),
-      newCar: false,    }));
+      newCar: false,
+    }));
   };
 
   sortYear = () => {
@@ -64,7 +65,7 @@ export default class App extends React.Component {
     console.log(car);
     this.setState((state) => ({
       carList: [...state.carList, car],
-      maxId: state.maxId+1,
+      maxId: state.maxId + 1,
       newCar: false,
     }));
   };
@@ -82,7 +83,7 @@ export default class App extends React.Component {
           />
           <button
             onClick={() => {
-              this.setState({ newCar: true });
+              this.setState({ newCar: true, viewedCarId: null });
             }}
           >
             Ny bil
