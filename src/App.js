@@ -22,6 +22,7 @@ export default class App extends React.Component {
       carList: state.carList.sort((c1, c2) => {
         return c1.brand > c2.brand ? 1 : -1;
       }),
+      newCar: false,
     }));
   };
 
@@ -30,7 +31,7 @@ export default class App extends React.Component {
       carList: state.carList.sort((c1, c2) => {
         return c1.model > c2.model ? 1 : -1;
       }),
-    }));
+      newCar: false,    }));
   };
 
   sortYear = () => {
@@ -38,12 +39,14 @@ export default class App extends React.Component {
       carList: state.carList.sort((c1, c2) => {
         return c1.year > c2.year ? 1 : -1;
       }),
+      newCar: false,
     }));
   };
 
   setViewedCar = (id) => {
     this.setState((state) => ({
       viewedCarId: id,
+      newCar: false,
     }));
   };
 
